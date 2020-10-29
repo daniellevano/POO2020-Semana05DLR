@@ -38,7 +38,25 @@ public class Index {
     }
     
     public static void agregarEstudiante(){
-        
+        String nombre;
+        String apellidos;
+        String dni;
+        String codigo;
+        String estado;
+        System.out.println("Agregar Estudiante");
+        System.out.print("Nombre: ");
+        nombre = Leer.cadena();
+        System.out.print("Apellidos: ");
+        apellidos = Leer.cadena();
+        System.out.print("DNI: ");
+        dni = Leer.cadena();
+        System.out.print("Código: ");
+        codigo = Leer.cadena();
+        System.out.print("Estado: ");        
+        estado = Leer.cadena();
+        Estudiante estudiante = new Estudiante(nombre, apellidos, dni, codigo, estado);
+        EstudianteDAO estudianteDAO = new EstudianteDAO();
+        estudianteDAO.agregarestudiante(estudiante);        
     }
     
     public static void salir(){
