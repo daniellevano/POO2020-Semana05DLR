@@ -26,7 +26,11 @@ public class Index {
         }
     }
     public static void eliminarEstudiante(){
-        
+        listarEstudiantes();
+        System.out.println("Ingrese el ID del estudiante a Eliminar");
+        int id = Leer.entero();
+        EstudianteDAO estudianteDAO = new EstudianteDAO();
+        estudianteDAO.eliminarestudiante(id);
     }
     
     public static void editarEstudiante(){

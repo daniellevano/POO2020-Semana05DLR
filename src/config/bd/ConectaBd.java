@@ -22,6 +22,6 @@ public class ConectaBd {
     private final String url = "jdbc:mysql://localhost:3306/academicoPOO";
     private final String driver = "com.mysql.jdbc.Driver";
     private final String user = "root";
-    private final String password = "123";
+    private final String password = "";
                                     //CLAVE
 }
