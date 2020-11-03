@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vistacontrol;
 
 import java.util.List;
@@ -15,6 +10,7 @@ public class Index {
         EstudianteDAO estudianteDAO = new EstudianteDAO();
         List<Estudiante> estudiantes = estudianteDAO.listarestudiante();
         System.out.println("Listado de Estudiantes");
+        System.out.println("ID\tApellidos y Nombre\tDNI\tCódigo\tEstado");
         for (Estudiante estudiante : estudiantes) {
             System.out.println(
                     estudiante.getIdestudiante() + "\t"
@@ -34,7 +30,28 @@ public class Index {
     }
     
     public static void editarEstudiante(){
-        
+        listarEstudiantes();
+        System.out.println("Ingrese el ID del estudiante a editar: ");
+        int id = Leer.entero();
+        String nombre;
+        String apellidos;
+        String dni;
+        String codigo;
+        String estado;
+        System.out.println("Editar Estudiante");
+        System.out.print("Nombre: ");
+        nombre = Leer.cadena();
+        System.out.print("Apellidos: ");
+        apellidos = Leer.cadena();
+        System.out.print("DNI: ");
+        dni = Leer.cadena();
+        System.out.print("Código: ");
+        codigo = Leer.cadena();
+        System.out.print("Estado: ");        
+        estado = Leer.cadena();
+        Estudiante estudiante = new Estudiante(id, nombre, apellidos, dni, codigo, estado);
+        EstudianteDAO estudianteDAO = new EstudianteDAO();
+        estudianteDAO.editarestudiante(estudiante);
     }
     
     public static void agregarEstudiante(){
@@ -56,7 +73,8 @@ public class Index {
         estado = Leer.cadena();
         Estudiante estudiante = new Estudiante(nombre, apellidos, dni, codigo, estado);
         EstudianteDAO estudianteDAO = new EstudianteDAO();
-        estudianteDAO.agregarestudiante(estudiante);        
+        estudianteDAO.agregarestudiante(estudiante);
+        
     }
     
     public static void salir(){

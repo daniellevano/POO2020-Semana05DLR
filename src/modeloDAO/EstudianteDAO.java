@@ -93,19 +93,20 @@ public class EstudianteDAO implements CRUD{
     public boolean editarestudiante(Estudiante estudiante) {
         String consulta = " update estudiante "
                         + " set "
-                        + " nombre = '"+ estudiante.getNombre() +"' "
-                        + " apellidos = '"+ estudiante.getApellidos() +"' "
-                        + " dni = '"+ estudiante.getDni() +"' "
-                        + " codigo = '"+ estudiante.getCodigo() +"' "
+                        + " nombre = '"+ estudiante.getNombre() +"', "
+                        + " apellidos = '"+ estudiante.getApellidos() +"', "
+                        + " dni = '"+ estudiante.getDni() +"', "
+                        + " codigo = '"+ estudiante.getCodigo() +"', "
                         + " estado = '"+ estudiante.getEstado() +"' "
                         + " where "
                         + " idestudiante = " + estudiante.getIdestudiante();
+        //System.out.println("Consulta EDITAR: " + consulta);
         try {
             con = cn.getConnection();
             pst = con.prepareStatement(consulta);
             pst.executeUpdate();            
         } catch (Exception error) {
-            System.out.println("Error: Problemas con la EDICIÓN");
+            System.out.println("Error: Problemas con la EDICIÓN");            
             System.out.println(error.getMessage());
             return false;            
         }

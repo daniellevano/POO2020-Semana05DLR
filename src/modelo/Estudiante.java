@@ -10,7 +10,7 @@ public class Estudiante {
 
     public Estudiante() {
     }
-
+    
     public Estudiante(String nombre, String apellidos, String dni, String codigo, String estado) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -18,6 +18,17 @@ public class Estudiante {
         this.codigo = codigo;
         this.estado = estado;
     }
+
+    public Estudiante(int idestudiante, String nombre, String apellidos, String dni, String codigo, String estado) {
+        this.idestudiante = idestudiante;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.codigo = codigo;
+        this.estado = estado;
+    }
+    
+    
 
     public String getEstado() {
         return estado;
